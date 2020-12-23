@@ -24,10 +24,11 @@
     └── anonymous_1_bd_net.ipynb
     └── anonymous_2_bd_net.ipynb
 └── evaluation script
+    └── eval.py
     └── eval_anonymous_1.py
     └── eval_anonymous_2.py
     └── eval_multi_trigger_multi_target.py
-    └── sunglasses_bd_net.py
+    └── eval_sunglasses.py
 ```
 
 ## I. Group Member
@@ -52,7 +53,7 @@
    - Fine-pruning and Evaluation contain the training and evalution of each badnet model given
    - evaluation script contain one eval.py for large dataset evaluation, and four eval.py scripts, each corresponding to one of the four BadNets provided.
 
-## IIII. Evaluating Operation
+## IV. Evaluating Operation
    1. To evaluate the fine-purning model with giving data, execute eval.py by running:
     python3 eval.py <testing data directory> <new model directory> <corresponding bad net model directory> .
     E.g., python3 eval.py data/testing_data.h5 models/sunglasses_new_model.h5 models/sunglasses_bd_net.h5
