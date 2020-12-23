@@ -52,8 +52,8 @@
    - evaluation script contain one eval.py for large dataset evaluation, and four eval.py scripts, each corresponding to one of the four BadNets provided.
 
 ## IIII. Evaluating Operation
-    1.To evaluate the fine-purning model with giving data, execute eval.py by running:
-    python3 eval.py <testing data directory> <new model directory> <corresponding bad net model directory> .
-    E.g., python3 eval.py data/testing_data.h5 models/sunglasses_new_model.h5 models/sunglasses_bd_net.h5
-    2.To evaluate the repaired network with given input of YouTube Face image by running the corresponding .py by running:
-    E.g., python3 eval_anonymous_2.py data/test_image.jpg
+   1.To evaluate the fine-purning model with giving data, execute eval.py by running:
+python3 eval.py <testing data directory> <new model directory> <corresponding bad net model directory> .
+E.g., python3 eval.py data/testing_data.h5 models/sunglasses_new_model.h5 models/sunglasses_bd_net.h5
+   2.To evaluate the repaired network with given input of YouTube Face image by running the corresponding .py by running:
+E.g., python3 eval_anonymous_2.py data/test_image.jpg
