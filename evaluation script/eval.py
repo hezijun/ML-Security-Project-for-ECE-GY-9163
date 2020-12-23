@@ -5,6 +5,7 @@ import numpy as np
 
 clean_data_filename = str(sys.argv[1])
 model_filename = str(sys.argv[2])
+old_model_filename = str(sys.argv[3])
 
 def data_loader(filepath):
     data = h5py.File(filepath, 'r')
@@ -21,9 +22,16 @@ def main():
     x_test, y_test = data_loader(clean_data_filename)
     x_test = data_preprocess(x_test)
 
-    bd_model = keras.models.load_model(model_filename)
+    bd_model = keras.models.load_model(old_model_filename)
+    new_model = keras.models.load_model(model_filename)
 
-    clean_label_p = np.argmax(bd_model.predict(x_test), axis=1)
+    clean_label_p = np.argmax(new_model.predict(x_test), axis=1)
+    badnet_label_p = np.argmax(bd_model.predict(x_test), axis=1)
+
+    for i in range(len(clean_label_p)):
+    	if badnet_label_p[i] != clean_label_p[i]:
+    		clean_label_p[i] = 1283
+
     class_accu = np.mean(np.equal(clean_label_p, y_test))*100
     print('Classification accuracy:', class_accu)
 
