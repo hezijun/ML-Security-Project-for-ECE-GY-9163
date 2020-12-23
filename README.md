@@ -46,6 +46,7 @@
    - sys
    
 ## III. Description:
+   - [CSAW-HackML-2020]https://github.com/csaw-hackml/CSAW-HackML-2020
    - data can be found in given google drive link
    - models contain 4 badnet models and 4 fine-pruning repaired models
    - Fine-pruning and Evaluation contain the training and evalution of each badnet model given
