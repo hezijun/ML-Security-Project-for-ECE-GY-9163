@@ -36,9 +36,24 @@
    - Zihan Li
 
 ## II. Dependencies
-   1. Python 3.6.9
-   2. Keras 
-   3. Numpy 
-   4. tensorflow_model_optimization
-   5. H5py 
-   6. Colab
+   - Python
+   - Keras 
+   - Numpy 
+   - tensorflow_model_optimization
+   - H5py 
+   - Colab
+   - matplotlib
+   - sys
+   
+## III. Description:
+   - data can be found in given google drive link
+   - models contain 4 badnet models and 4 fine-pruning repaired models
+   - Fine-pruning and Evaluation contain the training and evalution of each badnet model given
+   - evaluation script contain one eval.py for large dataset evaluation, and four eval.py scripts, each corresponding to one of the four BadNets provided.
+
+## IIII. Evaluating Operation
+   1.To evaluate the fine-purning model with giving data, execute eval.py by running:
+    python3 eval.py <testing data directory> <new model directory> <corresponding bad net model directory> .
+    E.g., python3 eval.py data/testing_data.h5 models/sunglasses_new_model.h5 models/sunglasses_bd_net.h5
+   2.To evaluate the repaired network with given input of YouTube Face image by running the corresponding .py by running:
+    E.g., python3 eval_anonymous_2.py data/test_image.jpg
